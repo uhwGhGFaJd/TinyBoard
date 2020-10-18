@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?> <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="onion.tinyboard.mapper.ManageMapper">
+
+    <update id="changeServerState">
+        <if test="mode == 'enabled'">
+            UPDATE config SET config_value = false WHERE config_name = 'server_disabled'
+        </if>
+        <if test="mode == 'disabled'">
+            UPDATE config SET config_value = true WHERE config_name = 'server_disabled'
+        </if>
+    </update>
+
+    <update id="changePostingState">
+        <if test="mode == 'enabled'">
+            UPDATE config SET config_value = false WHERE config_name = 'server_posting_disabled'
+        </if>
+        <if test="mode == 'disabled'">
+            UPDATE config SET config_value = true WHERE config_name = 'server_posting_disabled'
+        </if>
+    </update>
+
+
+</mapper>
+

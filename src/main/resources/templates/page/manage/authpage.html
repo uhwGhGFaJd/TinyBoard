@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>TinyBoard - Manage</title>
+
+    <link rel="stylesheet" th:href="@{~/css/app.css}">
+</head>
+
+<body>
+
+<section>
+    <div class="container d-flex flex-column">
+        <div class="row align-items-center justify-content-center min-vh-100">
+            <div class="col-md-6 col-lg-5 col-xl-4">
+                <div>
+                    <div class="mb-5 text-center">
+                        <h6 class="h3 mb-1">Manage</h6>
+                    </div>
+                    <div th:utext="${msg}"></div>
+                    <form th:action="@{/manage/check}" th:method="post">
+                        <div class="form-group">
+                            <label class="form-control-label">Authentication Code</label>
+                            <div class="input-group">
+                                <input class="form-control form-control-sm" name="authpassword" required type="password">
+                            </div>
+
+                        </div>
+                        <div class="form-group">
+                            <div class="row mt-3">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-control-label">Verification</label>
+                                        <img alt="Verification Code" class="form-control form-control-sm p-0" th:src="@{/captcha}" title="Verification Code"/>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-control-label">Verification Code</label>
+                                        <input class="form-control form-control-sm" maxlength="6" name="captcha" required type="text">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-2">
+                            <button class="btn btn-block btn-primary " type="submit">submit</button>
+                        </div>
+                    </form>
+                    <div class="mt-2 text-center"><a class="small font-weight-bold" th:href="@{/}">return home</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+</body>
+
+</html>
