@@ -18,7 +18,7 @@ import java.util.Map;
 public interface ListOfThreadMapper {
 
 
-    @Select("SELECT thread_id, thread_nickname, thread_content, DATE_FORMAT(thread_create_date,'%e %M, %Y') thread_create_date FROM threads " +
+    @Select("SELECT thread_id, thread_nickname, thread_content, DATE_FORMAT(thread_create_date,'%e %M %Y, %H:%i') thread_create_date FROM threads " +
             "ORDER BY thread_id DESC limit #{startPage}, #{rowNum}")
     List<ListThread> ListThread(Map<String, Object> data);
 
