@@ -13,7 +13,7 @@ public class ManageCheck {
 
     @NotNull
     @NotBlank
-    private String authpassword;
+    private String authPassword;
 
     @NotNull
     @NotBlank
