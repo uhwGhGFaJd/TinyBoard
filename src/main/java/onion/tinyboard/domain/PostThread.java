@@ -14,18 +14,18 @@ public class PostThread {
     @Size(min = 1, max = 30, message = "Name size must be between {min} and {max}")
     private String nickname;
 
-    @NotNull
-    @NotBlank
+    @NotNull(message = "Verification Code must not be null")
+    @NotBlank(message = "Verification Code must not be blank")
     @Size(min = 1, max = 6, message = "Verification Code size must be between {min} and {max}")
     private String captcha;
 
-    @NotNull
-    @NotBlank
+    @NotNull(message = "Password must not be null")
+    @NotBlank(message = "Password must not be blank")
     @Size(min = 1, max = 20, message = "Password size must be between {min} and {max}")
     private String password;
 
-    @NotNull
-    @NotBlank
+    @NotNull(message = "Content must not be null")
+    @NotBlank(message = "Content must not be blank")
     @Size(min = 1, max = 5000, message = "Content size must be between {min} and {max}")
     private String content;
 

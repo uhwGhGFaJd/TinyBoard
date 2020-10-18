@@ -70,7 +70,7 @@ public class ManageController {
             return "redirect:/manage";
         }
 
-        if (!BCrypt.checkpw(manageCheck.getAuthpassword(), manageService.getServerConfigValue(3))) {
+        if (!BCrypt.checkpw(manageCheck.getAuthPassword(), manageService.getServerConfigValue(3))) {
             redirectAttributes.addFlashAttribute("msg", alertUtil.makeAlert("danger", "Access denied"));
             return "redirect:/manage";
         } else {

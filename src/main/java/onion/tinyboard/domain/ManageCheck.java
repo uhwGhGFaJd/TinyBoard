@@ -11,12 +11,12 @@ import javax.validation.constraints.Size;
 @Setter
 public class ManageCheck {
 
-    @NotNull
-    @NotBlank
+    @NotNull(message = "Authentication Code must not be null")
+    @NotBlank(message = "Authentication Code must not be blank")
     private String authPassword;
 
-    @NotNull
-    @NotBlank
-    @Size(min = 1, max = 6)
+    @NotNull(message = "Verification Code must not be null")
+    @NotBlank(message = "Verification Code must not be blank")
+    @Size(min = 1, max = 6, message = "Verification Code size must be between {min} and {max}")
     private String captcha;
 }
