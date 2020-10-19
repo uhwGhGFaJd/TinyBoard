@@ -24,7 +24,7 @@ From the GNU site:
 ## Support
  1. Review the [open issues](https://github.com/uhwGhGFaJd/TinyBoard/issues).
  2. Open a [new issue](https://github.com/uhwGhGFaJd/TinyBoard/issues/new).
- 3. Finally, you can send me email [refer to my profile](https://github.com/uhwGhGFaJd).
+ 3. Lastly, you can send me email [refer to my profile](https://github.com/uhwGhGFaJd).
  
 ## TinyBoard Screenshots
 
