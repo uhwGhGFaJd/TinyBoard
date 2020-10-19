@@ -3,7 +3,7 @@ A Simple Spring Boot Board With Mariadb Database Support. This Project Developed
 
 ## Features
 * Simple CAPTCHA
-* Delete post via Password
+* Delete Thread via Password
 * Easy TinyBoard management panel
 
 
@@ -14,6 +14,7 @@ From the GNU site:
 
 ## Dependencies
 * Java 11
+* Maven
 * MariaDB 10.5.4 higher
 
 ## How to Install
