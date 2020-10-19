@@ -10,7 +10,7 @@
                     </div>
 
                     <hr/>
-
+                    <div th:utext="${msg}"></div>
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="row mx-n2">
@@ -66,9 +66,34 @@
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
+
+
+                    <div class="card mt-4">
+                        <div class="card-body">
+                            <h6 class="card-subtitle">Change manage password</h6>
+                            <form th:action="@{/manage/function/change/password}" th:method="POST">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group mb-3">
+                                            <label>New Password</label>
+                                            <input class="form-control form-control-sm" maxlength="20" name="newPassword" placeholder="New Password" required type="password">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group mb-3">
+                                            <label>Confirm Password</label>
+                                            <input class="form-control form-control-sm" maxlength="20" name="confirmPassword" placeholder="Confirm Password" required type="password">
+                                        </div>
+                                    </div>
+                                </div>
+                                <p>the session will be invalidated if change manage password</p>
+                                <button class="btn btn-secondary btn-sm" type="submit">change</button>
+                            </form>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>

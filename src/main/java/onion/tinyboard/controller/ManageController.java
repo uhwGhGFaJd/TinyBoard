@@ -1,6 +1,7 @@
 package onion.tinyboard.controller;
 
 
+import onion.tinyboard.domain.ChangePassword;
 import onion.tinyboard.domain.ManageCheck;
 import onion.tinyboard.domain.ServerConfig;
 import onion.tinyboard.service.ListOfThreadService;
@@ -140,8 +141,24 @@ public class ManageController {
                 manageService.deleteAllArticle();
                 break;
         }
+        return "redirect:/manage/index";
+    }
 
+    @PostMapping("manage/function/change/password")
+    private String changeManagePassword(@Valid ChangePassword changePassword, BindingResult bindingResult, RedirectAttributes redirectAttributes, HttpSession httpSession) {
 
+        if (bindingResult.hasErrors()) {
+            redirectAttributes.addFlashAttribute("msg", alertUtil.makeAlert("danger", Objects.requireNonNull(bindingResult.getFieldError()).getDefaultMessage()));
+            return "redirect:/manage/index";
+        }else if(!changePassword.getNewPassword().equals(changePassword.getConfirmPassword())){
+            redirectAttributes.addFlashAttribute("msg", alertUtil.makeAlert("danger", "Password does not matched"));
+            return "redirect:/manage/index";
+        }
+
+        manageService.changeManagePassword(changePassword);
+
+        httpSession.setAttribute("AdminState", false);
+        httpSession.invalidate();
         return "redirect:/manage/index";
     }
 

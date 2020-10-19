@@ -1,10 +1,12 @@
 package onion.tinyboard.mapper;
 
 
+import onion.tinyboard.domain.ChangePassword;
 import onion.tinyboard.domain.ServerConfig;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -32,5 +34,8 @@ public interface ManageMapper {
 
     @Select("SELECT config_value FROM config WHERE config_name = 'server_disabled'")
     int getServerState();
+
+    @Update("UPDATE config SET config_value = #{newPassword} WHERE id = 3")
+    void changeManagePassword(ChangePassword changePassword);
 
 }
