@@ -17,9 +17,12 @@ From the GNU site:
 * MariaDB 10.5.4 higher
 
 ## How to Install
-*
-*
-*
+```
+1. git clone https://github.com/uhwGhGFaJd/TinyBoard.git
+2. mvn clean
+3. mvn package 
+```
+
 
 ## Support
  1. Review the [open issues](https://github.com/uhwGhGFaJd/TinyBoard/issues).
