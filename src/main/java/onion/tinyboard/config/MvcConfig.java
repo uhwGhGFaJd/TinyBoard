@@ -44,6 +44,7 @@ public class MvcConfig implements WebMvcConfigurer {
                 .excludePathPatterns("/captcha");
         registry.addInterceptor(manageInterceptor())
                 .addPathPatterns("/manage/index/**")
+                .addPathPatterns("/manage/function/**")
                 .excludePathPatterns("/manage");
     }
 

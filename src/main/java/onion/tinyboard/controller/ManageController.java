@@ -92,7 +92,7 @@ public class ManageController {
     }
 
 
-    @GetMapping("admin_page/function/{mode}")
+    @GetMapping("manage/function/{mode}")
     public String adminFunction(@PathVariable String mode, Model model) {
 
         String title = null;
@@ -119,7 +119,7 @@ public class ManageController {
         return "page/manage/adminfunction";
     }
 
-    @PostMapping("admin_page/function/{mode}/confirm")
+    @PostMapping("manage/function/{mode}/confirm")
     public String adminFunctionConfirm(@PathVariable String mode) {
 
 

@@ -2,8 +2,10 @@ package onion.tinyboard.controller;
 
 
 import onion.tinyboard.domain.PostThread;
+import onion.tinyboard.service.ManageService;
 import onion.tinyboard.service.PostThreadService;
 import onion.tinyboard.utils.AlertUtil;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -27,6 +29,9 @@ public class PostThreadController {
 
     private final PostThreadService postThreadService;
 
+    @Autowired
+    private ManageService manageService;
+
     public PostThreadController(AlertUtil alertUtil, PostThreadService postThreadService) {
 
         this.alertUtil = alertUtil;
@@ -48,6 +53,11 @@ public class PostThreadController {
             return "redirect:/";
         } else if (!postThread.getCaptcha().equals(getCaptchaCode)) {
             redirectAttributes.addFlashAttribute("msg", alertUtil.makeAlert("danger", "Verification Code does not matched"));
+            return "redirect:/";
+        }
+
+        if (manageService.getServerConfigValue(2).equals("1")) {
+            redirectAttributes.addFlashAttribute("msg", alertUtil.makeAlert("warning", "Posting has been disabled"));
             return "redirect:/";
         }
 

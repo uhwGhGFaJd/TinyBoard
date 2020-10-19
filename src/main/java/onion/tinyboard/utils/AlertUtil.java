@@ -28,6 +28,11 @@ public class AlertUtil {
                 outPut += message;
                 outPut += "</div>";
                 break;
+            case "warning":
+                outPut = "<div class='alert alert-warning mt-2' role = 'alert'>";
+                outPut += message;
+                outPut += "</div>";
+                break;
             case "info":
                 outPut = "<div class='alert alert-info mt-2' role = 'alert'>";
                 outPut += message;

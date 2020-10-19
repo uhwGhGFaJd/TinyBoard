@@ -5,7 +5,7 @@
                 <div class="col-lg-9">
                     <div class="row align-items-center">
                         <div class="col">
-                            <h4 class="h4 mb-0">Admin Dashboard</h4>
+                            <span class="display-4 text-dark mb-0">Admin Dashboard</span>
                         </div>
                     </div>
 
@@ -13,24 +13,18 @@
 
                     <div class="row">
                         <div class="col-lg-12">
-                            <div class="alert alert-primary" th:if="${msg != null}" th:text="${msg}">
-
-                            </div>
                             <div class="row mx-n2">
                                 <div class="col-lg-4 px-2">
                                     <div class="card">
                                         <div class="card-body">
-                                            <span class="avatar bg-primary text-white rounded-circle mr-3">
-                                                <i data-feather="server"></i>
-                                            </span>
-                                            <a class="d-block h5 mt-3" href="#">Server</a>
+                                            <span class="d-block h5 mt-3">Server</span>
                                             <p class="text-sm text-muted" th:if="${server_disabled} == 1" th:text="Disabled">Disabled</p>
                                             <p class="text-sm text-muted" th:if="${server_disabled} == 0" th:text="Enabled">Enabled</p>
                                             <div class="row align-items-center mt-4">
                                                 <div class="col-6">
-                                                    <a class="btn btn-sm btn-primary" th:href="@{admin_page/function/enabledserver}" th:if="${server_disabled} == 1"
+                                                    <a class="btn btn-sm btn-primary" th:href="@{/manage/function/enabledserver}" th:if="${server_disabled} == 1"
                                                        th:text="Enabled">Enabled</a>
-                                                    <a class="btn btn-sm btn-primary" th:href="@{admin_page/function/disableserver}" th:if="${server_disabled} == 0"
+                                                    <a class="btn btn-sm btn-primary" th:href="@{/manage/function/disableserver}" th:if="${server_disabled} == 0"
                                                        th:text="Disabled">Disabled</a>
 
                                                 </div>
@@ -41,15 +35,12 @@
                                 <div class="col-lg-4 px-2">
                                     <div class="card">
                                         <div class="card-body">
-                                            <span class="avatar bg-primary text-white rounded-circle mr-3">
-                                                <i data-feather="database"></i>
-                                            </span>
-                                            <a class="d-block h5 mt-3" href="#">Thread</a>
+                                            <span class="d-block h5 mt-3">Thread</span>
                                             <p class="text-sm text-muted" th:text="${thread_count} + ' Count'">Count</p>
                                             <div class="row align-items-center mt-4">
                                                 <div class="col">
-                                                    <a class="btn btn-sm btn-danger" th:href="@{/admin_page/function/deleteallarticle}">Empty</a>
-                                                    <a class="btn btn-sm btn-danger" th:href="@{/admin_page/function/deleteallarticle}">Select</a>
+                                                    <a class="btn btn-sm btn-danger" th:href="@{/manage/function/deleteallarticle}">Empty</a>
+                                                    <a class="btn btn-sm btn-danger" th:href="@{/manage/function/deleteallarticle}">Select</a>
                                                 </div>
 
                                             </div>
@@ -59,18 +50,15 @@
                                 <div class="col-lg-4 px-2">
                                     <div class="card">
                                         <div class="card-body">
-                                            <span class="avatar bg-primary text-white rounded-circle mr-3">
-                                                <i data-feather="edit-3"></i>
-                                            </span>
-                                            <a class="d-block h5 mt-3" href="#">Posting</a>
+                                            <span class="d-block h5 mt-3">Posting</span>
                                             <p class="text-sm text-muted" th:if="${server_posting_disabled} == 1" th:text="Disabled">Enabled</p>
                                             <p class="text-sm text-muted" th:if="${server_posting_disabled} == 0" th:text="Enabled">Disabled</p>
 
                                             <div class="row align-items-center mt-4">
                                                 <div class="col-6">
-                                                    <a class="btn btn-sm btn-primary" th:href="@{admin_page/function/enabledposting}" th:if="${server_posting_disabled} == 1"
+                                                    <a class="btn btn-sm btn-primary" th:href="@{/manage/function/enabledposting}" th:if="${server_posting_disabled} == 1"
                                                        th:text="Enabled">Enabled</a>
-                                                    <a class="btn btn-sm btn-primary" th:href="@{admin_page/function/disableposting}" th:if="${server_posting_disabled} == 0"
+                                                    <a class="btn btn-sm btn-primary" th:href="@{/manage/function/disableposting}" th:if="${server_posting_disabled} == 0"
                                                        th:text="Disabled">Disabled</a>
                                                 </div>
                                             </div>
