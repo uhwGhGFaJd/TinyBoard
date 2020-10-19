@@ -21,6 +21,7 @@ From the GNU site:
 1. git clone https://github.com/uhwGhGFaJd/TinyBoard.git
 2. mvn clean
 3. mvn package 
+4. java -jar PACKAGENAME.jar
 ```
 
 
