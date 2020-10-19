@@ -2,9 +2,9 @@
 A Simple Spring Boot Board With Mariadb Database Support. This Project Developed For Hidden Service.
 
 ## Features
-*
-*
-*
+* Simple CAPTCHA
+* Delete post via Password
+* Easy TinyBoard management panel
 
 
 ## Licence
