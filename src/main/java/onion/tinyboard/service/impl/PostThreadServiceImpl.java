@@ -15,7 +15,6 @@ public class PostThreadServiceImpl implements PostThreadService {
         this.postThreadMapper = postThreadMapper;
     }
 
-
     @Override
     public void insertNewThread(PostThread postThread) {
         if (postThread.getNickname() == null || postThread.getNickname().trim().length() == 0) {

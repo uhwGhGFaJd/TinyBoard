@@ -9,7 +9,7 @@
                     <form th:action="@{/post}" th:method="post">
                         <div class="form-group">
                             <label class="form-control-label">Name</label>
-                            <input class="form-control form-control-sm" maxlength="30" placeholder="Anonymous" type="text">
+                            <input class="form-control form-control-sm" maxlength="30" name="nickname" placeholder="Anonymous" type="text">
                         </div>
                         <label class="form-control-label">Comment</label>
                         <textarea class="form-control form-control-sm" maxlength="5000" name="content" required rows="3" style="font-size: 13px;"></textarea>
