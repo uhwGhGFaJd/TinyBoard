@@ -1,7 +1,7 @@
 # TinyBoard
 A Simple Spring Boot Board With Mariadb Database Support. This Project Developed For Hidden Service.
 <br>
-although project developed for hidden service, also you can use surface web.
+although project developed for hidden service, also you can use for surface web.
 
 ## Features
 * Simple CAPTCHA

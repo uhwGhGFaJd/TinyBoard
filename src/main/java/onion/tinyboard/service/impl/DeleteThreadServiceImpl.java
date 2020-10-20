@@ -1,26 +1,27 @@
 package onion.tinyboard.service.impl;
 
 import onion.tinyboard.domain.GetDeleteThreadInfo;
-import onion.tinyboard.mapper.DeleteThreadMapper;
+import onion.tinyboard.mapper.ThreadMapper;
 import onion.tinyboard.service.DeleteThreadService;
 import org.springframework.stereotype.Service;
 
 @Service
 public class DeleteThreadServiceImpl implements DeleteThreadService {
 
-    private final DeleteThreadMapper deleteThreadMapper;
+    private final ThreadMapper threadMapper;
 
-    public DeleteThreadServiceImpl(DeleteThreadMapper deleteThreadMapper) {
-        this.deleteThreadMapper = deleteThreadMapper;
+    public DeleteThreadServiceImpl(ThreadMapper threadMapper) {
+        this.threadMapper = threadMapper;
     }
+
 
     @Override
     public GetDeleteThreadInfo getDeleteThreadInfo(int thread_id) {
-        return deleteThreadMapper.getDeleteThreadInfo(thread_id);
+        return threadMapper.getDeleteThreadInfo(thread_id);
     }
 
     @Override
     public void deleteThread(int thread_id) {
-        deleteThreadMapper.deleteThread(thread_id);
+        threadMapper.deleteThread(thread_id);
     }
 }

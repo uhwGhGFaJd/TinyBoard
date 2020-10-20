@@ -1,7 +1,7 @@
 package onion.tinyboard.service.impl;
 
 import onion.tinyboard.domain.PostThread;
-import onion.tinyboard.mapper.PostThreadMapper;
+import onion.tinyboard.mapper.ThreadMapper;
 import onion.tinyboard.service.PostThreadService;
 import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.stereotype.Service;
@@ -9,11 +9,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class PostThreadServiceImpl implements PostThreadService {
 
-    private final PostThreadMapper postThreadMapper;
+    private final ThreadMapper threadMapper;
 
-    public PostThreadServiceImpl(PostThreadMapper postThreadMapper) {
-        this.postThreadMapper = postThreadMapper;
+    public PostThreadServiceImpl(ThreadMapper threadMapper) {
+        this.threadMapper = threadMapper;
     }
+
 
     @Override
     public void insertNewThread(PostThread postThread) {
@@ -21,6 +22,6 @@ public class PostThreadServiceImpl implements PostThreadService {
             postThread.setNickname("Anonymous");
         }
         postThread.setPassword(BCrypt.hashpw(postThread.getPassword(), BCrypt.gensalt()));
-        postThreadMapper.insertNewThread(postThread);
+        threadMapper.insertNewThread(postThread);
     }
 }
