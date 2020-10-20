@@ -34,7 +34,6 @@ public class DeleteThreadController {
         this.threadService = threadService;
     }
 
-
     @InitBinder
     public void InitBinder(WebDataBinder dataBinder) {
         dataBinder.registerCustomEditor(String.class, new StringTrimmerEditor(true));

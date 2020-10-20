@@ -27,7 +27,9 @@ public interface ThreadMapper {
     @Delete("DELETE FROM threads WHERE thread_id = #{thread_id}")
     void deleteThread(int thread_id);
 
-    @Select("SELECT thread_id, thread_nickname, thread_content, DATE_FORMAT(thread_create_date,'%e %M %Y, %H:%i') thread_create_date FROM threads " +
+    @Select("SELECT thread_id, thread_nickname, thread_content, DATE_FORMAT(thread_create_date,'%e %M %Y, %H:%i') thread_create_date, " +
+            "(SELECT COUNT(*) FROM thread_reply WHERE thread_id=th.thread_id) AS thread_reply_count " +
+            "FROM threads th " +
             "ORDER BY thread_id DESC limit #{startPage}, #{rowNum}")
     List<ListThread> ListThread(Map<String, Object> data);
 

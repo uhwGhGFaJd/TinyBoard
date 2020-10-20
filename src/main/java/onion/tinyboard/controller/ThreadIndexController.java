@@ -1,7 +1,6 @@
 package onion.tinyboard.controller;
 
 
-import onion.tinyboard.domain.ListThread;
 import onion.tinyboard.service.ThreadService;
 import onion.tinyboard.utils.PagingUtil;
 import org.springframework.stereotype.Controller;
@@ -9,7 +8,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.List;
 import java.util.Map;
 import java.util.WeakHashMap;
 
@@ -47,10 +45,9 @@ public class ThreadIndexController {
             totalPage = page;
         }
 
-        List<ListThread> threadList = threadService.ListThread(data);
 
         model.addAttribute("pagination", pagingUtil.getPaging(page, totalPage, ""));
-        model.addAttribute("threadList", threadList);
+        model.addAttribute("threadList", threadService.ListThread(data));
 
         return "page/index";
     }

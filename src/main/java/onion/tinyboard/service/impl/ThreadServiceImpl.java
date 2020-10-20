@@ -8,6 +8,7 @@ import onion.tinyboard.mapper.ThreadReplyMapper;
 import onion.tinyboard.service.ThreadService;
 import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.HashMap;
 import java.util.List;
@@ -38,9 +39,9 @@ public class ThreadServiceImpl implements ThreadService {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public Map<String, Object> getThreadInfo(int thread_id) {
         Map<String, Object> data = new HashMap<>();
-
         data.put("threadInfo", threadMapper.getThreadInfo(thread_id));
         data.put("replies", threadReplyMapper.getThreadRepliesList(thread_id));
         return data;

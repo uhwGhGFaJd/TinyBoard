@@ -2,7 +2,6 @@ package onion.tinyboard.domain;
 
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
 
 /**
  * Created by uhwGhGFaJd@protonmail.com on 2020/10/19
@@ -10,7 +9,6 @@ import lombok.ToString;
  */
 @Getter
 @Setter
-@ToString
 public class GetThreadInfo {
     private int thread_id;
     private String thread_nickname;

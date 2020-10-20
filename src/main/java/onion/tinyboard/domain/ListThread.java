@@ -8,4 +8,5 @@ import lombok.Setter;
 public class ListThread {
     private int thread_id;
     private String thread_nickname, thread_content, thread_create_date;
+    private int thread_reply_count;
 }

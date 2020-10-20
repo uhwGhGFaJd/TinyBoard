@@ -58,42 +58,6 @@
                         </div>
                     </div>
 
-                    <div class="text-reset p-0">
-                        <div class="card card-active-listener mb-3">
-                            <div class="card-body p-3">
-                                <div class="media">
-                                    <div class="media-body overflow-hidden">
-                                        <div class="d-flex align-items-center mb-1">
-                                            <h6 class="text-truncate mb-0 mr-auto">#211 Anonymous</h6>
-                                            <p class="small text-muted text-nowrap ml-4">18 October 2020, 22:52</p>
-                                        </div>
-                                        <span>contentcontentcontentcontentcontentcontent</span>
-                                    </div>
-                                </div>
-                                <hr>
-                                <a class="" th:href="@{/thread/1}">Reply</a>
-                                <div class="media pl-4">
-                                    <div class="media-body overflow-hidden">
-                                        <div class="d-flex align-items-center mb-1">
-                                            <h6 class="text-truncate mb-0 mr-auto">#211 Anonymous</h6>
-                                            <p class="small text-muted text-nowrap ml-4">18 October 2020, 22:52</p>
-                                        </div>
-                                        <span>Thank you for shopping with us. We’ll send a confirmation once your items have shipped. Your order details are indicated below. If you would like to view the status of your order or make any changes to it, pleas</span>
-                                    </div>
-                                </div>
-                                <div class="media pl-4">
-                                    <div class="media-body overflow-hidden">
-                                        <div class="d-flex align-items-center mb-1">
-                                            <h6 class="text-truncate mb-0 mr-auto">#211 Anonymous</h6>
-                                            <p class="small text-muted text-nowrap ml-4">18 October 2020, 22:52</p>
-                                        </div>
-                                        <span>well..</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                     <div class="text-reset p-0" th:each="thread : ${threadList}">
                         <div class="card card-active-listener mb-3">
                             <div class="card-body p-3">
@@ -106,6 +70,8 @@
                                         <span th:utext=${thread.thread_content}>content</span>
                                     </div>
                                 </div>
+                                <hr>
+                                <a class="font-size-sm" th:href="@{/thread/{threadid}(threadid=${thread.thread_id})}" th:text="|Reply (${thread.thread_reply_count})|">Reply</a>
                             </div>
                         </div>
                     </div>
