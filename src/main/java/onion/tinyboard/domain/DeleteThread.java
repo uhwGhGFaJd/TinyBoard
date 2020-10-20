@@ -12,7 +12,7 @@ import javax.validation.constraints.Size;
 @Setter
 public class DeleteThread {
 
-    @Min(value = 0, message = "Post Id must be greater than or equal to {value}")
+    @Min(value = 0, message = "Thread Id must be greater than or equal to {value}")
     private int thread_id;
 
     @NotNull(message = "Post Password must not be null")

@@ -42,7 +42,7 @@ public class ThreadServiceImpl implements ThreadService {
         Map<String, Object> data = new HashMap<>();
 
         data.put("threadInfo", threadMapper.getThreadInfo(thread_id));
-        //data.put("replies", threadReplyMapper.getThreadRepliesList(thread_id));
+        data.put("replies", threadReplyMapper.getThreadRepliesList(thread_id));
         return data;
     }
 

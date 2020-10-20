@@ -20,13 +20,13 @@
                                 </div>
                                 <hr>
                                 <span class="">Replies</span>
-                                <div class="media pl-4">
+                                <div class="media pl-4" th:each="replies : ${replies}">
                                     <div class="media-body overflow-hidden">
                                         <div class="d-flex align-items-center">
-                                            <h6 class="text-truncate mb-0 mr-auto">#211 Anonymous</h6>
-                                            <p class="small text-muted text-nowrap ml-4">18 October 2020, 22:52</p>
+                                            <h6 class="text-truncate mb-0 mr-auto" th:text="${replies.reply_nickname}">name</h6>
+                                            <p class="small text-muted text-nowrap ml-4" th:text="${replies.reply_create_date}">date</p>
                                         </div>
-                                        <span>Thank you for shopping with us. We’ll send a confirmation once your items have shipped. Your order details are indicated below. If you would like to view the status of your order or make any changes to it, pleas</span>
+                                        <span th:utext="${replies.reply_content}">contend</span>
                                     </div>
                                 </div>
                                 <hr>
@@ -35,13 +35,13 @@
                                         <div th:utext="${msg}"></div>
                                         <form th:action="@{/reply/post}" th:method="POST">
                                             <label class="form-control-label">Comment</label>
-                                            <textarea class="form-control form-control-sm" maxlength="5000" name="content" required="" rows="3" style="font-size: 13px;"></textarea>
+                                            <textarea class="form-control form-control-sm" maxlength="5000" name="content" required rows="3" style="font-size: 13px;"></textarea>
 
                                             <div class="row mt-3">
                                                 <div class="col">
                                                     <div class="form-group">
                                                         <label class="form-control-label">Name</label>
-                                                        <input class="form-control form-control-sm" maxlength="19" name="nickname" placeholder="Anonymous" required type="text">
+                                                        <input class="form-control form-control-sm" maxlength="19" name="nickname" placeholder="Anonymous" type="text">
                                                     </div>
                                                 </div>
                                                 <div class="col">
@@ -59,13 +59,13 @@
                                                 <div class="col">
                                                     <div class="form-group">
                                                         <label class="form-control-label">Verification Code</label>
-                                                        <input class="form-control form-control-sm" maxlength="6" name="captcha" required type="text">
+                                                        <input class="form-control form-control-sm"  maxlength="6" name="captcha" required type="text">
                                                     </div>
                                                 </div>
                                             </div>
 
                                             <div>
-                                                <input readonly th:value="${threadInfo.thread_id}" type="hidden">
+                                                <input name="thread_id" readonly th:value="${threadInfo.thread_id}" type="hidden">
                                                 <button class="btn btn-sm btn-primary btn-block" type="submit">Submit reply
                                                 </button>
                                             </div>
@@ -75,25 +75,6 @@
                             </div>
                         </div>
                     </div>
-
-                    <div class="text-reset p-0" th:each="thread : ${threadList}">
-                        <div class="card card-active-listener mb-3">
-                            <div class="card-body p-3">
-                                <div class="media">
-                                    <div class="media-body overflow-hidden">
-                                        <div class="d-flex align-items-center mb-1">
-                                            <h6 class="text-truncate mb-0 mr-auto" th:text="'#'+${thread.thread_id} + ' ' + ${thread.thread_nickname}">name</h6>
-                                            <p class="small text-muted text-nowrap ml-4" th:text=${thread.thread_create_date}>createTime</p>
-                                        </div>
-                                        <span th:utext=${thread.thread_content}>content</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="mb-4" th:utext="${pagination}"></div>
-
                 </div>
             </div>
         </div>

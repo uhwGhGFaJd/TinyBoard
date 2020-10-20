@@ -28,6 +28,7 @@ public class viewThreadController {
 
 
         model.addAttribute("threadInfo", data.get("threadInfo"));
+        model.addAttribute("replies", data.get("replies"));
         return "page/viewThread/index";
     }
 

@@ -10,7 +10,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class GetRepliesList {
-    private int id;
+    private int reply_id;
     private String reply_nickname;
     private String reply_content;
     private String reply_create_date;

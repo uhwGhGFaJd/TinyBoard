@@ -3,6 +3,7 @@ package onion.tinyboard.domain;
 import lombok.Getter;
 import lombok.Setter;
 
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -15,6 +16,7 @@ import javax.validation.constraints.Size;
 @Setter
 public class PostReply {
 
+    @Min(value = 1, message = "Thread Id must be greater than or equal to {value}")
     private int thread_id;
 
     @Size(min = 1, max = 30, message = "Name size must be between {min} and {max}")
