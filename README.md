@@ -39,4 +39,14 @@ sudo java -jar FILENAME.jar
 ## TinyBoard Screenshots
 
 
+<img width="1480" alt="1" src="https://user-images.githubusercontent.com/72780307/96549713-b8b79280-1264-11eb-863e-bc852cbc1038.png">
+<img width="1480" alt="2" src="https://user-images.githubusercontent.com/72780307/96549718-ba815600-1264-11eb-8d97-1330810053fe.png">
+<img width="1480" alt="3" src="https://user-images.githubusercontent.com/72780307/96549719-bb19ec80-1264-11eb-941a-255d76fad6da.png">
+<img width="1480" alt="4" src="https://user-images.githubusercontent.com/72780307/96549722-bbb28300-1264-11eb-9e00-62f70900f08d.png">
+<img width="1480" alt="5" src="https://user-images.githubusercontent.com/72780307/96549725-bc4b1980-1264-11eb-80e5-c69d5ca1697a.png">
+<img width="1480" alt="6" src="https://user-images.githubusercontent.com/72780307/96549728-bce3b000-1264-11eb-81f9-c58d7132b3fa.png">
+<img width="1480" alt="7" src="https://user-images.githubusercontent.com/72780307/96549733-bd7c4680-1264-11eb-8ddb-08b4d4b7787a.png">
+
+
+
 
