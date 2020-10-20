@@ -2,7 +2,7 @@ package onion.tinyboard.controller;
 
 import onion.tinyboard.domain.DeleteThread;
 import onion.tinyboard.domain.GetDeleteThreadInfo;
-import onion.tinyboard.service.DeleteThreadService;
+import onion.tinyboard.service.ThreadService;
 import onion.tinyboard.utils.AlertUtil;
 import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.propertyeditors.StringTrimmerEditor;
@@ -27,12 +27,13 @@ public class DeleteThreadController {
 
     private final AlertUtil alertUtil;
 
-    private final DeleteThreadService deleteThreadService;
+    private final ThreadService threadService;
 
-    public DeleteThreadController(AlertUtil alertUtil, DeleteThreadService deleteThreadService) {
+    public DeleteThreadController(AlertUtil alertUtil, ThreadService threadService) {
         this.alertUtil = alertUtil;
-        this.deleteThreadService = deleteThreadService;
+        this.threadService = threadService;
     }
+
 
     @InitBinder
     public void InitBinder(WebDataBinder dataBinder) {
@@ -60,7 +61,7 @@ public class DeleteThreadController {
             return "redirect:/delete";
         }
 
-        GetDeleteThreadInfo getDeleteThreadInfo = deleteThreadService.getDeleteThreadInfo(deleteThread.getThread_id());
+        GetDeleteThreadInfo getDeleteThreadInfo = threadService.getDeleteThreadInfo(deleteThread.getThread_id());
         if (getDeleteThreadInfo == null) {
             redirectAttributes.addFlashAttribute("deletePost", deleteThread);
             redirectAttributes.addFlashAttribute("msg", alertUtil.makeAlert("danger", "Post Id Not Found"));
@@ -70,7 +71,7 @@ public class DeleteThreadController {
             return "redirect:/delete";
         }
 
-        deleteThreadService.deleteThread(deleteThread.getThread_id());
+        threadService.deleteThread(deleteThread.getThread_id());
         redirectAttributes.addFlashAttribute("msg", alertUtil.makeAlert("success", "Deleted"));
         return "redirect:/delete";
 

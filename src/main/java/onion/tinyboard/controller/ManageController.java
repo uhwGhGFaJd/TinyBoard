@@ -4,8 +4,8 @@ package onion.tinyboard.controller;
 import onion.tinyboard.domain.ChangePassword;
 import onion.tinyboard.domain.ManageCheck;
 import onion.tinyboard.domain.ServerConfig;
-import onion.tinyboard.service.ListOfThreadService;
 import onion.tinyboard.service.ManageService;
+import onion.tinyboard.service.ThreadService;
 import onion.tinyboard.utils.AlertUtil;
 import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.propertyeditors.StringTrimmerEditor;
@@ -34,12 +34,12 @@ public class ManageController {
 
     private final AlertUtil alertUtil;
     private final ManageService manageService;
-    private final ListOfThreadService listOfThreadService;
+    private final ThreadService threadService;
 
-    public ManageController(AlertUtil alertUtil, ManageService manageService, ListOfThreadService listOfThreadService) {
+    public ManageController(AlertUtil alertUtil, ManageService manageService,  ThreadService threadService) {
         this.alertUtil = alertUtil;
         this.manageService = manageService;
-        this.listOfThreadService = listOfThreadService;
+        this.threadService = threadService;
     }
 
     @InitBinder
@@ -87,7 +87,7 @@ public class ManageController {
         for (ServerConfig serverConfig : serverConfigList) {
             model.addAttribute(serverConfig.getConfig_name(), serverConfig.getConfig_value());
         }
-        model.addAttribute("thread_count", listOfThreadService.totalThreadCount());
+        model.addAttribute("thread_count", threadService.totalThreadCount());
 
         return "page/manage/index";
     }

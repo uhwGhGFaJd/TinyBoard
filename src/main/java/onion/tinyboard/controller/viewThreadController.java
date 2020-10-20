@@ -1,6 +1,6 @@
 package onion.tinyboard.controller;
 
-import onion.tinyboard.service.ViewThreadService;
+import onion.tinyboard.service.ThreadService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,15 +15,16 @@ import java.util.Map;
 @Controller
 public class viewThreadController {
 
-    private final ViewThreadService viewThreadService;
+    private final ThreadService threadService;
 
-    public viewThreadController(ViewThreadService viewThreadService) {
-        this.viewThreadService = viewThreadService;
+    public viewThreadController(ThreadService threadService) {
+        this.threadService = threadService;
     }
 
+
     @GetMapping("thread/{thread_id}")
-    public String viewThread(@PathVariable int thread_id, Model model){
-        Map<String, Object> data = viewThreadService.getThreadInfo(thread_id);
+    public String viewThread(@PathVariable int thread_id, Model model) {
+        Map<String, Object> data = threadService.getThreadInfo(thread_id);
 
 
         model.addAttribute("threadInfo", data.get("threadInfo"));

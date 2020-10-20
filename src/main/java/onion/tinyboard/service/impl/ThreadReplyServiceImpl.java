@@ -1,6 +1,6 @@
 package onion.tinyboard.service.impl;
 
-import onion.tinyboard.service.ThreadReplyPostService;
+import onion.tinyboard.service.ThreadReplyService;
 import org.springframework.stereotype.Service;
 
 /**
@@ -8,5 +8,5 @@ import org.springframework.stereotype.Service;
  * Github       : https://github.com/uhwGhGFaJd
  */
 @Service
-public class ThreadReplyPostServiceImpl implements ThreadReplyPostService {
+public class ThreadReplyServiceImpl implements ThreadReplyService {
 }

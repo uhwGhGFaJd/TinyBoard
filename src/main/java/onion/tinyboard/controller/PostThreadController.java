@@ -3,7 +3,7 @@ package onion.tinyboard.controller;
 
 import onion.tinyboard.domain.PostThread;
 import onion.tinyboard.service.ManageService;
-import onion.tinyboard.service.PostThreadService;
+import onion.tinyboard.service.ThreadService;
 import onion.tinyboard.utils.AlertUtil;
 import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.stereotype.Controller;
@@ -26,13 +26,12 @@ public class PostThreadController {
 
     private final AlertUtil alertUtil;
 
-    private final PostThreadService postThreadService;
+    private final ThreadService threadService;
     private final ManageService manageService;
 
-    public PostThreadController(AlertUtil alertUtil, PostThreadService postThreadService, ManageService manageService) {
-
+    public PostThreadController(AlertUtil alertUtil, ThreadService threadService, ManageService manageService) {
         this.alertUtil = alertUtil;
-        this.postThreadService = postThreadService;
+        this.threadService = threadService;
         this.manageService = manageService;
     }
 
@@ -59,7 +58,7 @@ public class PostThreadController {
             return "redirect:/";
         }
 
-        postThreadService.insertNewThread(postThread);
+        threadService.insertNewThread(postThread);
         return "redirect:/";
     }
 
