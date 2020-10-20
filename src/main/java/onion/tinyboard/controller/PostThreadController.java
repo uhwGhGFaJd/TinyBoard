@@ -43,6 +43,11 @@ public class PostThreadController {
     @PostMapping("post")
     public String WritePost(@Valid PostThread postThread, BindingResult bindingResult, RedirectAttributes redirectAttributes, HttpServletRequest req) {
 
+        if (manageService.getServerConfigValue(2).equals("1")) {
+            redirectAttributes.addFlashAttribute("msg", alertUtil.makeAlert("warning", "Posting has been disabled"));
+            return "redirect:/";
+        }
+
         String getCaptchaCode = (String) req.getSession().getAttribute("captcha");
 
         if (bindingResult.hasErrors()) {
@@ -53,10 +58,7 @@ public class PostThreadController {
             return "redirect:/";
         }
 
-        if (manageService.getServerConfigValue(2).equals("1")) {
-            redirectAttributes.addFlashAttribute("msg", alertUtil.makeAlert("warning", "Posting has been disabled"));
-            return "redirect:/";
-        }
+
 
         threadService.insertNewThread(postThread);
         return "redirect:/";

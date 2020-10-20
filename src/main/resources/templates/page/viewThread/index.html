@@ -20,6 +20,13 @@
                                 </div>
                                 <hr>
                                 <span class="">Replies</span>
+
+                                <div class="media " th:if="${#lists.isEmpty(replies)}">
+                                    <div class="media-body overflow-hidden">
+                                        <div class="font-weight-bolder">No replies</div>
+                                    </div>
+                                </div>
+
                                 <div class="media pl-4" th:each="replies : ${replies}">
                                     <div class="media-body overflow-hidden">
                                         <div class="d-flex align-items-center">
@@ -59,7 +66,7 @@
                                                 <div class="col">
                                                     <div class="form-group">
                                                         <label class="form-control-label">Verification Code</label>
-                                                        <input class="form-control form-control-sm"  maxlength="6" name="captcha" required type="text">
+                                                        <input class="form-control form-control-sm" maxlength="6" name="captcha" required type="text">
                                                     </div>
                                                 </div>
                                             </div>
