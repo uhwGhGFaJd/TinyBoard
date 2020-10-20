@@ -1,5 +1,7 @@
 # TinyBoard
 A Simple Spring Boot Board With Mariadb Database Support. This Project Developed For Hidden Service.
+<br>
+although project developed for hidden service, also you can use surface web.
 
 ## Features
 * Simple CAPTCHA
@@ -19,10 +21,10 @@ From the GNU site:
 
 ## How to Install
 ```
-1. git clone https://github.com/uhwGhGFaJd/TinyBoard.git
-2. mvn clean
-3. mvn package 
-4. sudo java -jar FILENAME.jar
+git clone https://github.com/uhwGhGFaJd/TinyBoard.git
+mvn clean
+mvn package 
+sudo java -jar FILENAME.jar
 ```
 
 
