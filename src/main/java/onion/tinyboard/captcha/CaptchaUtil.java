@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServletResponse;
 
 public class CaptchaUtil {
     public void captchaImg(HttpServletRequest request, HttpServletResponse response) {
-
         Captcha captcha = new Captcha.Builder(200, 50)
                 .addText()
                 .addBackground(new GradiatedBackgroundProducer())
@@ -24,6 +23,5 @@ public class CaptchaUtil {
 
         request.getSession().setAttribute("captcha", captcha.getAnswer());
         CaptchaServletUtil.writeImage(response, captcha.getImage());
-
     }
 }

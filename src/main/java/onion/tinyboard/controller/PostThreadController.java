@@ -5,7 +5,6 @@ import onion.tinyboard.domain.PostThread;
 import onion.tinyboard.service.ManageService;
 import onion.tinyboard.service.PostThreadService;
 import onion.tinyboard.utils.AlertUtil;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -28,14 +27,13 @@ public class PostThreadController {
     private final AlertUtil alertUtil;
 
     private final PostThreadService postThreadService;
+    private final ManageService manageService;
 
-    @Autowired
-    private ManageService manageService;
-
-    public PostThreadController(AlertUtil alertUtil, PostThreadService postThreadService) {
+    public PostThreadController(AlertUtil alertUtil, PostThreadService postThreadService, ManageService manageService) {
 
         this.alertUtil = alertUtil;
         this.postThreadService = postThreadService;
+        this.manageService = manageService;
     }
 
     @InitBinder
