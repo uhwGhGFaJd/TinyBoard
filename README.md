@@ -59,13 +59,22 @@ sudo nano TinyBoard/src/main/resources/application.properties
 //Save if modified.
 ```
 
-##### 4) build
+##### 4) Build & Run
 ```
 cd TinyBoard
 sudo mvn clean package
 cd target
 sudo java -jar FILENAME.jar
 ```
+
+##### 5) Login to TinyBoard
+```
+http://SERVER-IP/manage
+Default manage password is 1234
+And change the default password.
+thank you!
+```
+
 
 
 ## Support
