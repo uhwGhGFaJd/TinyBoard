@@ -37,7 +37,7 @@ sudo apt install mariadb-server
 ```
 sudo git clone https://github.com/uhwGhGFaJd/TinyBoard.git
 cd TinyBoard
-pwd //copy result path.
+pwd //you should remember result path.
 ```
 
 ##### 3) Database configuration settings

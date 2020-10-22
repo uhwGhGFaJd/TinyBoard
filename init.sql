@@ -2,7 +2,7 @@
 
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
-SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE=''ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION'';
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- -----------------------------------------------------
 -- Schema tinyboard
@@ -49,7 +49,7 @@ CREATE TABLE IF NOT EXISTS `tinyboard`.`thread_reply` (
   `reply_content` TEXT NOT NULL,
   `reply_create_date` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`reply_id`),
-  INDEX `thread_reply_id_idx` (`thread_id` ASC) VISIBLE,
+  INDEX `thread_reply_id_idx` (`thread_id` ASC),
   CONSTRAINT `thread_reply_id`
     FOREIGN KEY (`thread_id`)
     REFERENCES `tinyboard`.`threads` (`thread_id`)
@@ -67,9 +67,9 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `tinyboard`;
-INSERT INTO `tinyboard`.`config` (`id`, `config_name`, `config_value`) VALUES (1, ''server_disabled'', ''false'');
-INSERT INTO `tinyboard`.`config` (`id`, `config_name`, `config_value`) VALUES (2, ''server_posting_disabled'', ''false'');
-INSERT INTO `tinyboard`.`config` (`id`, `config_name`, `config_value`) VALUES (3, ''server_manage_password'', ''$2a$10$VFgfzLUd1rtDGeyKL31MqOcyhk77uV.7fDMUraFqhL/W.Deejgaxi'');
+INSERT INTO `tinyboard`.`config` (`id`, `config_name`, `config_value`) VALUES (1, 'server_disabled', 'false');
+INSERT INTO `tinyboard`.`config` (`id`, `config_name`, `config_value`) VALUES (2, 'server_posting_disabled', 'false');
+INSERT INTO `tinyboard`.`config` (`id`, `config_name`, `config_value`) VALUES (3, 'server_manage_password', '$2a$10$VFgfzLUd1rtDGeyKL31MqOcyhk77uV.7fDMUraFqhL/W.Deejgaxi');
 
 COMMIT;
 
