@@ -47,7 +47,7 @@ set password = password('YOUR PASSWORD'); //Example: set password = password('ma
 flush privileges;
 exit;
 mysql -u root -p
-source /home/server/TinyBoard/init.sql
+source /home/server/TinyBoard/init.sql;
 exit;
 ```
 
