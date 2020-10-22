@@ -33,7 +33,7 @@ public interface ManageMapper {
     List<ServerConfig> getAllServerConfig();
 
     @Select("SELECT config_value FROM config WHERE config_name = 'server_disabled'")
-    int getServerState();
+    Boolean getServerState();
 
     @Update("UPDATE config SET config_value = #{newPassword} WHERE id = 3")
     void changeManagePassword(ChangePassword changePassword);

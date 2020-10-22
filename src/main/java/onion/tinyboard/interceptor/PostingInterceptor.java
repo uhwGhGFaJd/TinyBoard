@@ -17,8 +17,8 @@ public class PostingInterceptor extends HandlerInterceptorAdapter {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        if (manageService.getServerState() == 1) {
-            response.sendRedirect(request.getContextPath() + "/maintenance");
+        if (manageService.getServerConfigValue(2).equals("true")) {
+            response.sendRedirect(request.getContextPath() + "/disabledposting");
             return false;
         } else {
             return true;

@@ -18,7 +18,7 @@ public interface ManageService {
 
     List<ServerConfig> getServerConfig();
 
-    int getServerState();
+    Boolean getServerState();
 
     void changeManagePassword(ChangePassword changePassword);
 }

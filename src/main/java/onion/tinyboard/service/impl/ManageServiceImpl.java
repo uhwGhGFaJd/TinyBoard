@@ -45,7 +45,7 @@ public class ManageServiceImpl implements ManageService {
     }
 
     @Override
-    public int getServerState() {
+    public Boolean getServerState() {
         return manageMapper.getServerState();
     }
 

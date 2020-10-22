@@ -18,13 +18,13 @@
                                     <div class="card">
                                         <div class="card-body">
                                             <span class="d-block h5 mt-3">Server</span>
-                                            <p class="text-sm text-muted" th:if="${server_disabled} == 1" th:text="Disabled">Disabled</p>
-                                            <p class="text-sm text-muted" th:if="${server_disabled} == 0" th:text="Enabled">Enabled</p>
+                                            <p class="text-sm text-muted" th:if="${#strings.equals(server_disabled, true)}" th:text="Disabled">Disabled</p>
+                                            <p class="text-sm text-muted" th:if="${#strings.equals(server_disabled, false)}" th:text="Enabled">Enabled</p>
                                             <div class="row align-items-center mt-4">
                                                 <div class="col-6">
-                                                    <a class="btn btn-sm btn-primary" th:href="@{/manage/function/enabledserver}" th:if="${server_disabled} == 1"
+                                                    <a class="btn btn-sm btn-primary" th:href="@{/manage/function/enabledserver}" th:if="${#strings.equals(server_disabled, true)}"
                                                        th:text="Enabled">Enabled</a>
-                                                    <a class="btn btn-sm btn-primary" th:href="@{/manage/function/disableserver}" th:if="${server_disabled} == 0"
+                                                    <a class="btn btn-sm btn-primary" th:href="@{/manage/function/disableserver}" th:if="${#strings.equals(server_disabled, false)}"
                                                        th:text="Disabled">Disabled</a>
 
                                                 </div>
@@ -51,14 +51,14 @@
                                     <div class="card">
                                         <div class="card-body">
                                             <span class="d-block h5 mt-3">Posting</span>
-                                            <p class="text-sm text-muted" th:if="${server_posting_disabled} == 1" th:text="Disabled">Enabled</p>
-                                            <p class="text-sm text-muted" th:if="${server_posting_disabled} == 0" th:text="Enabled">Disabled</p>
+                                            <p class="text-sm text-muted" th:if="${#strings.equals(server_posting_disabled, true)}" th:text="Disabled">Enabled</p>
+                                            <p class="text-sm text-muted" th:if="${#strings.equals(server_posting_disabled, false)}" th:text="Enabled">Disabled</p>
 
                                             <div class="row align-items-center mt-4">
                                                 <div class="col-6">
-                                                    <a class="btn btn-sm btn-primary" th:href="@{/manage/function/enabledposting}" th:if="${server_posting_disabled} == 1"
+                                                    <a class="btn btn-sm btn-primary" th:href="@{/manage/function/enabledposting}" th:if="${#strings.equals(server_posting_disabled, true)}"
                                                        th:text="Enabled">Enabled</a>
-                                                    <a class="btn btn-sm btn-primary" th:href="@{/manage/function/disableposting}" th:if="${server_posting_disabled} == 0"
+                                                    <a class="btn btn-sm btn-primary" th:href="@{/manage/function/disableposting}" th:if="${#strings.equals(server_posting_disabled, false)}"
                                                        th:text="Disabled">Disabled</a>
                                                 </div>
                                             </div>

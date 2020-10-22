@@ -39,9 +39,12 @@ public class MvcConfig implements WebMvcConfigurer {
                 .excludePathPatterns("/css/**")
                 .excludePathPatterns("/403")
                 .excludePathPatterns("/maintenance")
+                .excludePathPatterns("/disabledposting")
                 .excludePathPatterns("/manage/**")
                 .excludePathPatterns("/admin_page/**")
                 .excludePathPatterns("/captcha");
+        registry.addInterceptor(postingInterceptor())
+                .addPathPatterns("/post");
         registry.addInterceptor(manageInterceptor())
                 .addPathPatterns("/manage/index/**")
                 .addPathPatterns("/manage/function/**")

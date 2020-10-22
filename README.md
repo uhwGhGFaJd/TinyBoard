@@ -37,32 +37,33 @@ sudo apt install mariadb-server
 ```
 sudo git clone https://github.com/uhwGhGFaJd/TinyBoard.git
 cd TinyBoard
-pwd //you should remember result path.
+pwd //you should remember your result path. My result paht is: /home/server/TinyBoard
 ```
 
 ##### 3) Database configuration settings
-copying the code located in https://raw.githubusercontent.com/uhwGhGFaJd/TinyBoard/master/init.sql <br>
-and pasting it into the mySQL shell by using the commands below.
 ```
 sudo mysql
 set password = password('YOUR PASSWORD'); //Example: set password = password('mariadb');
 flush privileges;
 exit;
 mysql -u root -p
-create database tinyboard;
-use tinyboard;
-*COPY AND PASTE THE DATA FROM THE init.sql FILE*
+source /home/server/TinyBoard/init.sql
+exit;
 ```
 
 
-##### If you need change tinyBoard Server Config
+##### If you need change tinyBoard Server Config (Option)
 ```
-application.properties
+sudo nano TinyBoard/src/main/resources/application.properties
+
+//Save if modified.
 ```
 
+##### 4) build
 ```
-mvn clean
-mvn package 
+cd TinyBoard
+sudo mvn clean package
+cd target
 sudo java -jar FILENAME.jar
 ```
 

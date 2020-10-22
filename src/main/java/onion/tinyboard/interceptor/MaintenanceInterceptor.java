@@ -17,7 +17,7 @@ public class MaintenanceInterceptor extends HandlerInterceptorAdapter {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        if (manageService.getServerState() == 1) {
+        if (manageService.getServerState()) {
             response.sendRedirect(request.getContextPath() + "/maintenance");
             return false;
         } else {
