@@ -21,10 +21,46 @@ From the GNU site:
 - Java 11
 - Maven
 - MariaDB 10.5.4 higher
+- Lombok
 
-## How to Install
+## Installation
+##### 1) Install the necessary modules. (Ubuntu 20.04 Server environment)
 ```
-git clone https://github.com/uhwGhGFaJd/TinyBoard.git
+sudo apt update
+sudo apt install openjdk-11-jdk
+sudo apt install git
+sudo apt install maven
+sudo apt install mariadb-server
+```
+
+##### 2) Download the latest version of tinyBoard from GitHub.
+```
+sudo git clone https://github.com/uhwGhGFaJd/TinyBoard.git
+cd TinyBoard
+pwd //copy result path.
+```
+
+##### 3) Database configuration settings
+copying the code located in https://raw.githubusercontent.com/uhwGhGFaJd/TinyBoard/master/init.sql <br>
+and pasting it into the mySQL shell by using the commands below.
+```
+sudo mysql
+set password = password('YOUR PASSWORD'); //Example: set password = password('mariadb');
+flush privileges;
+exit;
+mysql -u root -p
+create database tinyboard;
+use tinyboard;
+*COPY AND PASTE THE DATA FROM THE init.sql FILE*
+```
+
+
+##### If you need change tinyBoard Server Config
+```
+application.properties
+```
+
+```
 mvn clean
 mvn package 
 sudo java -jar FILENAME.jar
