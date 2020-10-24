@@ -8,7 +8,8 @@ although project developed for hidden service, also you can use for surface web.
 - Delete Thread via Password
 - Easy TinyBoard management panel
     - Delete All Thread, Server deactivation, Disable Posting<br>
-     (Default manage password is ``1234``)
+     (Default manage password is ``1234``).
+- No JavaScript, Log
 
 
 
