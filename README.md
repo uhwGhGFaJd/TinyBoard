@@ -81,7 +81,7 @@ thank you!
 ## Support
  1. Review the [open issues](https://github.com/uhwGhGFaJd/TinyBoard/issues).
  2. Open a [new issue](https://github.com/uhwGhGFaJd/TinyBoard/issues/new).
- 3. Lastly, you can send me email [refer to my profile](https://github.com/uhwGhGFaJd).
+ 3. Lastly, you can send me email [refer to my profile](https://github.com/kimdnel).
  
 ## TinyBoard Screenshots
 <img width="1480" alt="1" src="https://user-images.githubusercontent.com/72780307/96549713-b8b79280-1264-11eb-863e-bc852cbc1038.png">
