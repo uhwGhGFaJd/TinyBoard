@@ -2,7 +2,7 @@ package onion.tinyboard.service.impl;
 
 import onion.tinyboard.domain.GetRepliesList;
 import onion.tinyboard.domain.PostReply;
-import onion.tinyboard.mapper.ThreadReplyMapper;
+import onion.tinyboard.repository.ThreadReplyMapper;
 import onion.tinyboard.service.ThreadReplyService;
 import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.stereotype.Service;

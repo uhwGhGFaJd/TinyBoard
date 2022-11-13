@@ -3,7 +3,7 @@ package onion.tinyboard.service.impl;
 
 import onion.tinyboard.domain.ChangePassword;
 import onion.tinyboard.domain.ServerConfig;
-import onion.tinyboard.mapper.ManageMapper;
+import onion.tinyboard.repository.ManageMapper;
 import onion.tinyboard.service.ManageService;
 import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.stereotype.Service;

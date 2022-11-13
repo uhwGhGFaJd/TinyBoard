@@ -1,4 +1,4 @@
-package onion.tinyboard.mapper;
+package onion.tinyboard.repository;
 
 import onion.tinyboard.domain.GetDeleteThreadInfo;
 import onion.tinyboard.domain.GetThreadInfo;

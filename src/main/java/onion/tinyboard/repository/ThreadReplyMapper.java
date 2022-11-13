@@ -1,4 +1,4 @@
-package onion.tinyboard.mapper;
+package onion.tinyboard.repository;
 
 import onion.tinyboard.domain.GetRepliesList;
 import onion.tinyboard.domain.PostReply;
